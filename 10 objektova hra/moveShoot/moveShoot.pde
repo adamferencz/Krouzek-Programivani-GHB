@@ -11,7 +11,7 @@ void setup(){
 void draw(){
   background(255);
   
-  bullet.behave();
+  bullet.move();
   
   mover.display();
   bullet.display();

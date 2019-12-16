@@ -3,6 +3,10 @@ class Bullet {
  float y;
  float speedX;
  float speedY;
+ 
+ //defaultni rychlost
+ //flag zda leti nebo ne
+ 
  Mover mover;
  
   
@@ -10,16 +14,23 @@ class Bullet {
    mover = m;
    x = mover.x;
    y = mover.y;
-   
+   //init
  }
  
  void display(){
    circle(x,y,20);
  }
  
- void behave(){
+ void move(){
+   
+   //pokud leti tak tady
+   
    x = mover.x;
    y = mover.y;
  }
+ 
+ //funkce na vystreleni naboje
+ 
+ //funkce na reset naboje
   
 }
