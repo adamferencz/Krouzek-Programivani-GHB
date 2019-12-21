@@ -1,22 +1,16 @@
-
 Mover mover;
-Bullet bullet;
 
 void setup(){
  size(640,320); 
  mover = new Mover();
- bullet = new Bullet(mover);
+
 }
 
 
 void draw(){
   background(255);
-  
-  bullet.move();
-  
-  mover.display();
-  bullet.display();
-   
+  mover.moveBullets();
+  mover.display(); 
 }
 
 
@@ -29,10 +23,10 @@ void keyPressed(){
 
 
 void keyReleased(){
-  if(key == 'w') bullet.shoot(0);
-  if(key == 's') bullet.shoot(1);
-  if(key == 'a') bullet.shoot(2);
-  if(key == 'd') bullet.shoot(3);
+  if(key == 'w') mover.shoot(0);
+  if(key == 's') mover.shoot(1);
+  if(key == 'a') mover.shoot(2);
+  if(key == 'd') mover.shoot(3);
   
-  if(key == 'r') bullet.reset();
+  //if(key == 'r') mover.reset();
 }

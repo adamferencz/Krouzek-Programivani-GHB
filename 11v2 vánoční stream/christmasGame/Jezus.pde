@@ -1,25 +1,25 @@
-class Mover{
+class Jezus{
   float x;
   float y;
   float speed;
   //pridat mu 10 naboju
-  Bullet[] b = new Bullet[10];
+  Pressent[] b = new Pressent[10];
 //pridat pocitadlo na reaload  
   
   //pridat flag zda je nabito
   
-  Mover(){
+  Jezus(){
     x = width/2;
     y = height/2;
     speed = 5;
     for(int i = 0; i < 10; i++){
-      b[i] = new Bullet(this);
+      b[i] = new Pressent(this);
     }
     //inicializovat spravne prodane hodnoty
  }
  
  //pohyb vsech naboju - zavolat jejich funkci, ketra to umi
- void  moveBullets(){
+ void  movePressents(){
     for(int i = 0; i < 10; i++){
       b[i].move();
     }
@@ -27,13 +27,23 @@ class Mover{
  
  //vystrelit na urcitou vzdalenost
  void shoot(int dir){
-   
+   for(int i = 0; i < 10; i++){
+     if(b[i].isFlying == false){
+       b[i].shoot(dir);
+       break;
+     }
+   }
  }
  
  // dobijeni naboju
  
    void display() {
-    circle(x, y, 50);
+    //circle(x, y, 50);
+    
+    imageMode(CORNER);
+    jezusImg.resize(0,50);
+    image(jezusImg,x,y);
+    
     //zobrazovat naboje
     for(int i = 0; i < 10; i++){
       b[i].display();
@@ -52,5 +62,10 @@ class Mover{
     }
   }
  
+ void reload(){
+   for(int i = 0; i < 10; i++){
+      b[i].reset();
+    }
+ }
   
 }
