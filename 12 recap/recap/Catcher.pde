@@ -16,8 +16,10 @@ class Catcher{
   }
   
   void display(){
-    rectMode(CENTER);
-    rect(x,y,rwidth,rheigth);
+    adam.resize(0,150);
+    image(adam, x - rwidth/2, y - 120);
+    //rectMode(CENTER);
+    //rect(x,y,rwidth,rheigth);
   }
   
   

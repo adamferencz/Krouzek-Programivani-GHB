@@ -14,7 +14,9 @@ class Faller{
  }
  
  void display(){
-  circle(x,y,d); 
+  money.resize(0,100);
+  image(money, x, y - 50);
+  //circle(x,y,d); 
  }
  
  void fall(){
