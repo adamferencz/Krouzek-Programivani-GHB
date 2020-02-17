@@ -1,0 +1,10 @@
+Rekapitulace hodiny :)
+
+Dokončení minulé hodiny, akcelerace k myši - moje řešení a Tomovo vylepšení s reklamami na YTB :D
+
+Zopakovali jsme si základní pojmy k vektorům a jejich použití. Pak jsme se vrnuli na implementaci "použití síly" na objekt. Poté jak se bude řešit, co se stane, když jsou dvě síly. V závěru byla soamostatná práce na vytvoření hopíku, který můžeme odpálit směrem k myši kliknutím. 
+
+Jako vzor byl můj starý velmi nehezce popsaný program bad_hopík. Nejvíce se přiblížil hopik_Trtík vizuálně a funkčně. Poté dvojice kluku ve předu dokázala implementovat energerickou ztrátu (to že skáže pořád níž a níž) a mají velmi zajímavou implementaci rozpohybování míčku (kterou doteď moc nechápu :D ) - Martin Kosprd a Jonáš Venc.
+
+Příště nás čeká particle systems a pak už váš osobní projekt :D
+

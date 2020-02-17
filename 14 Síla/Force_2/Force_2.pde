@@ -15,10 +15,10 @@ void draw() {
   PVector g = new PVector(0,0.5); 
   m.applyForce(g);
   
-  if(mousePressed){
-      PVector wind = new PVector(0.2,0);
-    m.applyForce(wind);
-  }
+
+   //   PVector wind = new PVector(0.2,0);
+   //m.applyForce(wind);
+
 
   
   
@@ -26,4 +26,12 @@ void draw() {
   m.display();
   m.checkEdges();
 
+}
+
+void mouseClicked(){
+  m.velocity.mult(0);
+  PVector mouse = new PVector(mouseX, mouseY);
+  PVector accelerationShoot = PVector.sub(mouse, m.location);
+  accelerationShoot.setMag(30);
+  m.applyForce(accelerationShoot); //<>//
 }
