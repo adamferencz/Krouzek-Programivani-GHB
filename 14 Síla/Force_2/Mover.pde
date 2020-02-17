@@ -14,9 +14,14 @@ class Mover {
     acceleration = new PVector(0,0);
   }
   
+  void applyForce(PVector force){
+    acceleration.add(force);
+  }
+  
   void update() {
     velocity.add(acceleration);
     location.add(velocity);
+    acceleration.mult(0);
   }
 
   void display() {
