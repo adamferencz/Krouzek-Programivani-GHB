@@ -39,8 +39,13 @@ class Particle {
     ellipse(location.x, location.y, 12, 12);
   }
 
-  // Is the particle still useful?
-  //boolean isDead() {
-    //TODO
-  //}
+   //Is the particle still useful?
+  boolean isDead() {
+    if (lifespan < 0.0) {
+      return true;
+    } 
+    else {
+      return false;
+    }
+  }
 }

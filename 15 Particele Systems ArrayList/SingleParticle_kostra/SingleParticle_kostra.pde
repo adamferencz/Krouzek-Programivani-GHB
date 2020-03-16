@@ -2,11 +2,15 @@
 // Daniel Shiffman
 // http://natureofcode.com
 
-Particle p;
+//Particle p;
+ ParticleSystem ps;
+ ArrayList systems;
 
 void setup() {
-  size(800,200);
-  p = new Particle(new PVector(width/2,20));
+  size(800, 200);
+  
+  ps = new ParticleSystem();
+  
   background(255);
   smooth();
 }
@@ -14,9 +18,7 @@ void setup() {
 void draw() {
   background(255);
   
-  p.run();
-  //if (p.isDead()) {
-  //  p = new Particle(new PVector(width/2,20));
-  //  println("Particle dead!"); 
-  //}
+  ps.addParticle();
+  ps.run();
+  
 }
