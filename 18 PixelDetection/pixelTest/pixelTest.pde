@@ -16,7 +16,7 @@ void draw() {
 }
 
 void mousePressed(){
-  colorMode(HSB, 255);
+
   print(hue(get(mouseX,mouseY)));
   print(saturation(get(mouseX,mouseY)));
   print(brightness(get(mouseX,mouseY)));

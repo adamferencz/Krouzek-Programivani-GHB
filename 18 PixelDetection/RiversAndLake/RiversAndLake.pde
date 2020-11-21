@@ -91,36 +91,39 @@ void keyDontMovePlayerCONTROL () {
   }
 }
 
+boolean isNotBlue(int nextX,int nextY){
+  if (hue(get(nextX, nextY)) <= 126 && hue(get(nextX, nextY)) >= 123 && saturation(get(nextX, nextY)) >= 200 && saturation(get(nextX, nextY)) <= 230 && brightness(get(nextX, nextY)) >= 185  && brightness(get(nextX, nextY)) <= 210){
+    return true;
+  } else {
+    return false;
+  }
+   
+}
+
 void movePlayer () {
   if (moveRightPlayer) {
-    nextY = y;
-    nextX = (x + widthOfPlayer/2) + speed;
-    if (hue(get(nextX, nextY)) <= 126 && hue(get(nextX, nextY)) >= 123 && saturation(get(nextX, nextY)) >= 200 && saturation(get(nextX, nextY)) <= 230 && brightness(get(nextX, nextY)) >= 185  && brightness(get(nextX, nextY)) <= 210) {
+    if (isNotBlue((x + widthOfPlayer/2) + speed,y)) {
     } else {
       x += speed;
     }
   }
   if (moveUpPlayer) {
-    nextX = x;
-    nextY = (y - heightOfPlayer/2) - speed;
-    if (hue(get(nextX, nextY)) <= 126 && hue(get(nextX, nextY)) >= 123 && saturation(get(nextX, nextY)) >= 200 && saturation(get(nextX, nextY)) <= 230 && brightness(get(nextX, nextY)) >= 185  && brightness(get(nextX, nextY)) <= 210) {
+    if (isNotBlue(x,(y - heightOfPlayer/2) - speed)) {
     } else {
       y -= speed;
     }
   }
   if (moveDownPlayer) {
-    nextX = x;
-    nextY = (y + heightOfPlayer/2) + speed;
-    if (hue(get(nextX, nextY)) <= 126 && hue(get(nextX, nextY)) >= 123 && saturation(get(nextX, nextY)) >= 200 && saturation(get(nextX, nextY)) <= 230 && brightness(get(nextX, nextY)) >= 185  && brightness(get(nextX, nextY)) <= 210) {
+
+    if (isNotBlue(x,(y + heightOfPlayer/2) + speed)) {
     } else {
       y += speed;
     }
   }
 
   if (moveLeftPlayer) {
-    nextY = y;
-    nextX = (x - widthOfPlayer/2) - speed;
-    if (hue(get(nextX, nextY)) <= 126 && hue(get(nextX, nextY)) >= 123 && saturation(get(nextX, nextY)) >= 200 && saturation(get(nextX, nextY)) <= 230 && brightness(get(nextX, nextY)) >= 185  && brightness(get(nextX, nextY)) <= 210) {
+
+    if (isNotBlue((x - widthOfPlayer/2) - speed,y)) {
     } else {
       x -= speed;
     }
