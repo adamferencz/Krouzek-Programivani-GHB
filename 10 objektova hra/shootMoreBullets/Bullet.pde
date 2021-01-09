@@ -8,8 +8,9 @@ class Bullet {
   Bullet() {
     d = 10;
     x = d/2;
-    y = height/2;
+    y = mouseY;
     xSpeed = 5;
+    isFlying = true;
   }
   
   void shoot(){
@@ -17,24 +18,15 @@ class Bullet {
   }
   
   void move() {
-    if(isFlying){
-      x = x + xSpeed;
-    } else {
-      y = mouseY;
-    }
+    x = x + xSpeed;
+    
     if (x > width){
-      reset();
+      isFlying = false;
     }
   }
 
   void display() {
     circle(x, y, d);
-  }
-  
-  void reset(){
-    isFlying = false;
-    x = d/2;
-    y = mouseY;
   }
   
 }

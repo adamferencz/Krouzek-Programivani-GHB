@@ -1,6 +1,6 @@
+//Bullet[] bullets;
+ArrayList<Bullet> bullets;
 
-Bullet bullet;
-//TODO Bullet[] ...
 
 Enemy enemy;
 Player player;
@@ -8,9 +8,14 @@ void setup(){
   size(640, 320);
   enemy = new Enemy();
   player = new Player();
-  bullet = new Bullet();
-  //TODO new Array .... Bullet[ ... ]
-  //TODO for .... inicializace .. [] new Bullet
+  
+  //bullets = new Bullet[10];
+  bullets = new ArrayList();
+  
+//  for(int i = 0; i < 10; i++){
+//    bullets[i] = new Bullet();
+//  }
+  
   
 }
 
@@ -20,21 +25,38 @@ void draw(){
   //logic
   player.move();
   
-  // for .... 
-  bullet.move();
-  
   enemy.move();
   enemy.bounce();
   
-  //draw
   player.display();
   enemy.display();
-  bullet.display();
+  
+  for(Bullet bullet : bullets){
+    bullet.move();
+    bullet.display();
+    
+  }
+  
+  for(int i = bullets.size() - 1; i >= 0 ; i--){
+    if(!bullets.get(i).isFlying){
+      bullets.remove(i);
+    }
+  }
+
 }
 
 void keyPressed() {                                  // detekce stisknuti libovolneho tlacitka
   if (key == 's') {
+    
+    bullets.add(new Bullet());
+    
+    
     // for .... a dalsi veci viz obr
-    bullet.shoot();
+    //for(int i = 0; i < 10; i++){
+    //  if(!bullets[i].isFlying){
+    //    bullets[i].shoot();
+    //    break;
+    //  } 
+    //}
   }
 }
