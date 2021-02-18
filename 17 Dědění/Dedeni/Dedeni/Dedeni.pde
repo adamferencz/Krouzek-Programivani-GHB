@@ -1,4 +1,3 @@
-
 ArrayList<Enemy> enemy; //Nepřátelé
 int kills; //Počet zabitých nepřátel
 boolean loading; //Načtení nové vlny
@@ -24,10 +23,9 @@ void draw() {
     int rand = (int)random(3, 8);
     for (int i = rand-1; i >= 0; i--) {
       int randomcount = (int) random(0, 7);
-      enemy.add(new Enemy(random(0, height)));
-      //if (randomcount<=3) enemy.add(new Enemy(random(0, height)));
-      //else if (randomcount>3&&randomcount<=5) enemy.add(new LightEnemy(random(0, height)));
-      //else if (randomcount> 5) enemy.add(new HeavyEnemy(random(0, height)));
+      if (randomcount<=3) enemy.add(new Enemy(random(0, height)));
+      else if (randomcount>3&&randomcount<=5) enemy.add(new LightEnemy(random(0, height)));
+      else if (randomcount> 5) enemy.add(new HeavyEnemy(random(0, height)));
       print("\n " +randomcount);
     }
     loading = false;
