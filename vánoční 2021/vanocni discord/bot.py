@@ -9,7 +9,15 @@ PORT = 12000  # Arbitrary non-privileged port
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((HOST, PORT))
 
-my_secret_token = 'OTAwNzU0NzI0MzYwNDQxOTI2.YXF7NQ.PLtV6BtJeTVlTuCPPaBNXxXK2Sk'
+my_secret_token = None
+print(os.listdir("../"))
+with open('../token.txt') as f:
+    my_secret_token = f.readlines()[0]
+
+if my_secret_token == None:
+  assert("None token")
+# else:
+#   print(my_secret_token)
 client = discord.Client() 
 
 @client.event
